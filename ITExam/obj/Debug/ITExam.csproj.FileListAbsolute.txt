@@ -1,0 +1,6 @@
+C:\Users\kellym\Downloads\Training\ITExam\ITExam\bin\ITExam.dll.config
+C:\Users\kellym\Downloads\Training\ITExam\ITExam\bin\ITExam.dll
+C:\Users\kellym\Downloads\Training\ITExam\ITExam\bin\ITExam.pdb
+C:\Users\kellym\Downloads\Training\ITExam\ITExam\obj\Debug\ITExam.csprojResolveAssemblyReference.cache
+C:\Users\kellym\Downloads\Training\ITExam\ITExam\obj\Debug\ITExam.dll
+C:\Users\kellym\Downloads\Training\ITExam\ITExam\obj\Debug\ITExam.pdb
