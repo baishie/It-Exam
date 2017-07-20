@@ -1,0 +1,6 @@
+C:\Users\kellym\Downloads\It-Exam\ITExam\bin\ITExam.dll.config
+C:\Users\kellym\Downloads\It-Exam\ITExam\bin\ITExam.dll
+C:\Users\kellym\Downloads\It-Exam\ITExam\bin\ITExam.pdb
+C:\Users\kellym\Downloads\It-Exam\ITExam\obj\Debug\Exams.csprojResolveAssemblyReference.cache
+C:\Users\kellym\Downloads\It-Exam\ITExam\obj\Debug\ITExam.dll
+C:\Users\kellym\Downloads\It-Exam\ITExam\obj\Debug\ITExam.pdb

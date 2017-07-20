@@ -1,8 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ITExam.aspx.cs" Inherits="ITExam.ITExam" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
     <title>IT Tech Support</title>
     <link rel="stylesheet" href="CSS/main.css">
