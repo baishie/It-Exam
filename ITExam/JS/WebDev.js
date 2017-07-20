@@ -136,7 +136,7 @@ var Quiz = function () {
         });
         var tempResults = numberOfCorrectAnswers;
 
-        var numberOfCorrectAnswers = Math.floor(((numberOfCorrectAnswers / 113) * 100));
+        var numberOfCorrectAnswers = Math.floor(((numberOfCorrectAnswers / 94) * 100));
         console.log(numberOfCorrectAnswers);
         if (numberOfCorrectAnswers <= 15) {
             Results = 'Poor';
