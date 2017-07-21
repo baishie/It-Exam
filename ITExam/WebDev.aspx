@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="CSS/main.css">
 </head>
 <body>
-    <form id="form1" runat="server" onsubmit="return checkForm(this);"> 
+    <form id="form1" runat="server" onsubmit="return false"> 
               <asp:HiddenField ID="hdnField" runat="server" value=""   />
               <div class="quiz">
-                  <b><i>WEB DEVELOPER EXAMINATION</i></b> <br /><br />
-               <b>DIRECTIONS:</b><br /><br />
-                  Select the correct answer. <br /><br />
-                  <br />
+                <b><i>WEB DEVELOPER EXAMINATION</i></b> <br /><br />
+                <b>DIRECTIONS:</b><br /><br />
+                Select the correct answer. 
+
+              <div class="h1">PHP</div>
               <h2 class="quiz-question">1.) What does the initials of PHP stand for?</h2>
               <ul data-quiz-question="1">
                 <li class="quiz-answer" data-quiz-answer="a">a. PHP: Hypertext Preprocessor </li>
@@ -134,7 +135,7 @@
                 <li class="quiz-answer" data-quiz-answer="d">d. &lt;?php include:"time.inc";?&gt;</li>
               </ul>  
 
-                <%--codeigniter--%>
+                <div class="h1">CODEIGNITER</div>
               <h2 class="quiz-question">16.) A ___ is a simply a web page, or a page fragment, like a header, footer, sidebar, etc. In fact, views can flexibly be embedded within other views (within other views, etc., etc.) if you need this type of hierarchy.</h2>
               <ul data-quiz-question="16">
                 <li class="quiz-answer" data-quiz-answer="a">a. View </li>
@@ -248,8 +249,7 @@
 
 
               <%-- MYSQL --%>  
-
-
+                   <div class="h1">MYSQL</div>
               <h2 class="quiz-question">31.) MySQL runs on which operating systems?</h2>
               <ul data-quiz-question="31">
                 <li class="quiz-answer" data-quiz-answer="a">a. Linux and Mac OS-X only </li>
@@ -405,6 +405,7 @@
 
 
                   <%--  CSS--%>
+             <div class="h1">CSS</div>
               <h2 class="quiz-question">51.) Where in an HTML document is the correct place to refer to an external style sheet?</h2>
               <ul data-quiz-question="51">
                 <li class="quiz-answer" data-quiz-answer="a">a. In the &lt;head&gt; section </li>
@@ -485,6 +486,7 @@
 
                 
                 <%--  HTML--%>
+             <div class="h1">HTML</div>
               <h2 class="quiz-question">61.) What does HTML stand for?</h2>
               <ul data-quiz-question="61">
                 <li class="quiz-answer" data-quiz-answer="a">a. Hyperlinks and Text Markup Language </li>
@@ -557,6 +559,7 @@
 
 
               <%--    JAVASCRIPT, DOM--%>
+             <div class="h1">JAVASCRIPT</div>
               <h2 class="quiz-question">71.) Which variable name is valid in JavaScript?</h2>
               <ul data-quiz-question="71">
                 <li class="quiz-answer" data-quiz-answer="a">a. todaysDate </li>
@@ -636,6 +639,7 @@
 
 
                 <%--  JQUERY--%>
+             <div class="h1">JQUERY</div>
               <h2 class="quiz-question">81.) Which of the following is correct?</h2>
               <ul data-quiz-question="81">
                 <li class="quiz-answer" data-quiz-answer="a">a. jQuery is a JSON Library</li>
@@ -741,7 +745,7 @@
                                        
                  <div class="one_col">
                     <%--<input type="button" OnClick="proceed_Submit" id="proceed" value="Submit"></input>--%>
-                    <asp:Button ID="submit" runat="server" Text="Submit" type="button" OnClick="proceed_Submit" />
+                    <asp:Button ID="submit" runat="server" Text="Submit" type="button" OnClientClick="return checkForm(this);" />
                     <%--<asp:Button ID="submit" runat="server" Text="Submit" type="button" OnClick="proceed_Submit" UseSubmitBehavior="false" OnClientClick="this.disabled='true';this.value='Submitted'" />--%>
                 </div>                                                                                                                                                                                                                                                                                             
               </div>

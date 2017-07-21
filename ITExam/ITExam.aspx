@@ -136,6 +136,7 @@
                 <li class="quiz-answer" data-quiz-answer="d">d. Duplex speed</li>
               </ul>  
 
+
               <h2 class="quiz-question">16.) A user is trying to access an application on their home machine from work. The user sets up port forwarding on their router but is still unable to connect to the application. Which of the following should be the user’s NEXT step in resolving this issue?</h2>
               <ul data-quiz-question="16">
                 <li class="quiz-answer" data-quiz-answer="a">a. Configure Wake-on-LAN for the NIC on the Work P </li>
