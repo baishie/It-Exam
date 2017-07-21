@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="CSS/main.css">
 </head>
 <body>
-    <form id="form1" runat="server" onsubmit="return false"> 
+    <form id="form1" runat="server" onsubmit="return checkForm(this);"> 
               <asp:HiddenField ID="hdnField" runat="server" value=""   />
               <div class="quiz">
                 <b><i>WEB DEVELOPER EXAMINATION</i></b> <br /><br />
@@ -745,9 +745,9 @@
                                        
                  <div class="one_col">
                     <%--<input type="button" OnClick="proceed_Submit" id="proceed" value="Submit"></input>--%>
-                    <asp:Button ID="submit" runat="server" Text="Submit" type="button" OnClientClick="return checkForm(this);" />
+                    <asp:Button ID="submit" runat="server" Text="Submit" type="button" OnClick="proceed_Submit" />
                     <%--<asp:Button ID="submit" runat="server" Text="Submit" type="button" OnClick="proceed_Submit" UseSubmitBehavior="false" OnClientClick="this.disabled='true';this.value='Submitted'" />--%>
-                </div>                                                                                                                                                                                                                                                                                             
+                </div>                                                                                                                                                                                                                                                                                                 
               </div>
 
         </form> 

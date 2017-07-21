@@ -1,6 +1,5 @@
 ﻿var Results;
 var Flag;
-var answers[];
 var Quiz = function () {
     var self = this;
     this.init = function () {
@@ -111,11 +110,9 @@ var Quiz = function () {
 
 
     ]
-
     this._pickAnswer = function ($answer, $answers) {
         $answers.find('.quiz-answer').removeClass('active');
         $answer.addClass('active');
-
     }
     this._calcResult = function () {
         var numberOfCorrectAnswers = 0;
@@ -130,7 +127,7 @@ var Quiz = function () {
                     correctAnswer = a.answer;
                 }
             }
-            answers.push(correctAnswer);
+
             if (chosenAnswer == correctAnswer) {
                 numberOfCorrectAnswers++;
 
@@ -144,7 +141,7 @@ var Quiz = function () {
         });
         var tempResults = numberOfCorrectAnswers;
 
-        var numberOfCorrectAnswers = Math.floor(((numberOfCorrectAnswers / 94) * 100));
+        var numberOfCorrectAnswers = Math.floor(((numberOfCorrectAnswers / 113) * 100));
         console.log(numberOfCorrectAnswers);
         if (numberOfCorrectAnswers <= 15) {
             Results = 'Poor';
@@ -182,7 +179,7 @@ var Quiz = function () {
             console.log("FALSE");
             return false;
         }
-        
+
     }
     this._showResult = function (result) {
         $('.quiz-result').addClass(result.code).html(result.text);
@@ -191,25 +188,22 @@ var Quiz = function () {
         $('.quiz-answer').on('click', function () {
             var $this = $(this),
                 $answers = $this.closest('ul[data-quiz-question]');
-            console.log("answers ni");
-
             self._pickAnswer($this, $answers);
-            console.log(typeof (self._pickAnswer));
+
             if (self._isComplete()) {
             }
         });
     }
 }
-var quiz;
+
 var clicked = sessionStorage.getItem('clicked');
 //console.log(clicked + "CLICKED NI");
 if (clicked === 'true') {
-    localStorage.setItem('answer', quiz);
     $('.quiz-answer').off('click');
     document.getElementById("submit").disabled = true;
 }
 else {
-    quiz = new Quiz();
+    var quiz = new Quiz();
     quiz.init();
 }
 
@@ -217,25 +211,7 @@ else {
 function checkForm(form) {
     if (Flag === true) {
         sessionStorage.setItem('clicked', 'true');
-        sessionStorage.setItem('length', answers.length);
-        toStorage();
-        //return true;
         alert(Results);
     }
 
-}
-
-function toStorage() {
-
-    for(var i=0; i < answers.length; i++) {
-        var answer = answer[i];
-        sessionStorage.setItem(i, answer);
-    }
-}
-
-function getStorage() {
-    var length = sessionStorage.getItem('length');
-    for(var i=0; i < length; i++) {
-
-    }
 }
