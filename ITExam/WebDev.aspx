@@ -7,22 +7,26 @@
     <title>WEB DEV EXAM</title>
     <link rel="stylesheet" href="CSS/main.css">
 </head>
-<body>
+<body onload="timer();">
+    <div class="navbar">
+        <div id="timer"></div>
+    </div>
     <form id="form1" runat="server" onsubmit="return checkForm(this);"> 
-              <asp:HiddenField ID="hdnField" runat="server" value=""   />
-              <div class="quiz">
-                <b><i>WEB DEVELOPER EXAMINATION</i></b> <br /><br />
-                <b>DIRECTIONS:</b><br /><br />
-                Select the correct answer. 
+        <asp:HiddenField ID="ranking" runat="server" value=""   />
+        <asp:HiddenField ID="rawScore" runat="server" value=""   />
+         <div class="quiz" >
+            <h1> WEB DEVELOPER EXAMINATION </h1>
+            <b>DIRECTIONS:</b><br /><br />
+            Select the correct answer. 
 
-              <div class="h1">PHP</div>
-              <h2 class="quiz-question">1.) What does the initials of PHP stand for?</h2>
-              <ul data-quiz-question="1">
+            <div class="h1">PHP</div>
+            <h2 class="quiz-question">1.) What does the initials of PHP stand for?</h2>
+            <ul data-quiz-question="1">
                 <li class="quiz-answer" data-quiz-answer="a">a. PHP: Hypertext Preprocessor </li>
                 <li class="quiz-answer" data-quiz-answer="b">b. Preprocessor Hypertext PHP</li>
                 <li class="quiz-answer" data-quiz-answer="c">c. PHP Hypertext Processor </li>
                 <li class="quiz-answer" data-quiz-answer="d">d. PHP: Hyperbolic Processort </li>
-              </ul>
+             </ul>
 
               <h2 class="quiz-question">2.) PHP server scripts are surrounded by delimiters, which? </h2>
               <ul data-quiz-question="2">
@@ -743,15 +747,19 @@
               </ul>                                       
                     
                                        
-                 <div class="one_col">
-                    <%--<input type="button" OnClick="proceed_Submit" id="proceed" value="Submit"></input>--%>
-                    <asp:Button ID="submit" runat="server" Text="Submit" type="button" OnClick="proceed_Submit" />
-                    <%--<asp:Button ID="submit" runat="server" Text="Submit" type="button" OnClick="proceed_Submit" UseSubmitBehavior="false" OnClientClick="this.disabled='true';this.value='Submitted'" />--%>
-                </div>                                                                                                                                                                                                                                                                                                 
-              </div>
+                <div>
+	                <asp:Button ID="submit" runat="server" Text="Submit" type="button" />
+                </div>
+            </div>
+        </form>
 
-        </form> 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="JS/WebDev.js"></script>
-</body>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js'></script>
+        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src="JS/WebDev.js"></script>
+        <script src="JS/Scrollable.js"></script>
+        <script src="JS/Timer.js"></script>
+
+        </body>
 </html>

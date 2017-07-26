@@ -10,7 +10,7 @@
 namespace ITExam {
     
     
-    public partial class ITExam {
+    public partial class md5 {
         
         /// <summary>
         /// form1 control.

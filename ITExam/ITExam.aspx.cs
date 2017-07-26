@@ -15,6 +15,10 @@ namespace ITExam
         }
         protected void proceed_Submit(object sender, EventArgs e)
         {
-        }
-    }
+			//string vocabResult = hdnField.Value;
+			//Session["VocabResult"] = vocabResult;
+			//Response.Write(Session["VocabResult"]);
+
+		}
+	}
 }

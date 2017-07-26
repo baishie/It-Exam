@@ -22,13 +22,22 @@ namespace ITExam {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// hdnField control.
+        /// ranking control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hdnField;
+        protected global::System.Web.UI.WebControls.HiddenField ranking;
+        
+        /// <summary>
+        /// rawScore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField rawScore;
         
         /// <summary>
         /// submit control.

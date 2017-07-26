@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -68,7 +69,12 @@
     <Content Include="CSS\main.css" />
     <Content Include="ITExam.aspx" />
     <Content Include="JS\IT.js" />
+    <Content Include="JS\MD5.js" />
+    <Content Include="JS\md5Timer.js" />
+    <Content Include="JS\Scrollable.js" />
+    <Content Include="JS\Timer.js" />
     <Content Include="JS\WebDev.js" />
+    <Content Include="md5.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebDev.aspx" />
   </ItemGroup>
@@ -79,6 +85,13 @@
     </Compile>
     <Compile Include="ITExam.aspx.designer.cs">
       <DependentUpon>ITExam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="md5.aspx.cs">
+      <DependentUpon>md5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="md5.aspx.designer.cs">
+      <DependentUpon>md5.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebDev.aspx.cs">
