@@ -39,7 +39,7 @@ function timer() {
 		sec = sessionStorage.getItem("sec");
 	}
 	else {
-		min = "0" + 1;
+		min = 60;
         sec = "0" + 0;
 	}
 	var time;

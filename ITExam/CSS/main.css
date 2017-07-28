@@ -19,19 +19,19 @@ body {
     padding: 20px;
 }
 
-.quiz {
+.exam {
     padding: 3em 30px 20px 30px;
     max-width: 960px;
     margin: 0 auto;
 }
 
-.quiz ul {
+.exam ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.quiz-question {
+.exam-question {
     font-weight: bold;
     display: block;
     padding: 30px 0 10px 0;
@@ -39,7 +39,15 @@ body {
     font-size: 14px;
 }
 
-.quiz-answer {
+.exam-choice {
+    margin: 0 !important; 
+    padding: 10px !important;
+    background: #f7f7f7 !important;
+    margin-bottom: 5px !important;
+    cursor: pointer !important;
+}
+
+.exam-answer {
     margin: 0;
     padding: 10px;
     background: #f7f7f7;
@@ -47,11 +55,11 @@ body {
     cursor: pointer;
 }
 
-.quiz-answer:hover {
+.exam-answer:hover {
     background: #eee;
 }
 
-.quiz-answer:before {
+.exam-answer:before {
     content: "";
     display: inline-block;
     width: 15px;
@@ -62,11 +70,12 @@ body {
     margin-right: 10px;
 }
 
-.quiz-answer.active:before {
+.exam-answer.active:before {
     background-color: #0046b7;
     border-color: #0046b7;
 }
-.quiz-answer:disabled {
+
+.exam-answer:disabled {
     cursor: not-allowed;
 }
 
@@ -94,6 +103,7 @@ input[type="submit"]:disabled {
     color: white;
     cursor: not-allowed;
 }
+
 input[type=text] {
     border-style: solid !important;
     border-color: #b2b2b2 !important;
@@ -108,6 +118,7 @@ input[type=text]:disabled {
     width: 50%;
     cursor: not-allowed;
 }
+
 .navbar {
     overflow: hidden;
     background-color: #2196F3;
@@ -154,4 +165,65 @@ space {
     margin-bottom: -20px !important;
     color: #005fd5 !important;
     padding-top: 2em !important;
+}
+
+table {
+    border-collapse: collapse;
+    display: inline-block;
+    border: 1px dotted #ddd !important;
+}
+
+th, td {
+    border: 1px solid black;
+
+}
+th, td {
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top:3px !important; 
+    padding-bottom: 3px !important;
+}
+
+p {
+    /*text-decoration: underline;*/
+    /*-moz-text-decoration-color: red;
+    text-decoration-color: red;*/
+    color: red !important;
+    display:inline;
+}
+
+.box {
+    width: 300px;
+    text-align:left !important;
+    font-size:7px !important;
+    font-weight: normal !important;
+}
+
+.box2 {
+    display: inline-block !important;
+    text-align: left !important;
+    font-size: 14px !important;
+    font-weight: normal !important;
+    border-style: solid;
+    border-color: #d8d8d8;
+    border-width: 1px;
+    padding: 1em;
+}
+
+.instruction {
+    height: 100%;
+    position: relative;
+}
+
+.instruction img {
+    display: block;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.ins {
+    font-size:16px !important;
 }

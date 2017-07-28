@@ -10,7 +10,7 @@
 namespace ITExam {
     
     
-    public partial class md5 {
+    public partial class SQLDev {
         
         /// <summary>
         /// form1 control.

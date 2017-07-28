@@ -66,19 +66,32 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Aftermath.aspx" />
     <Content Include="CSS\main.css" />
+    <Content Include="Images\ins1.png" />
+    <Content Include="Images\ins2.png" />
     <Content Include="ITExam.aspx" />
     <Content Include="JS\IT.js" />
+    <Content Include="JS\loadResults.js" />
     <Content Include="JS\MD5.js" />
     <Content Include="JS\md5Timer.js" />
     <Content Include="JS\Scrollable.js" />
+    <Content Include="JS\SQLDev.js" />
     <Content Include="JS\Timer.js" />
     <Content Include="JS\WebDev.js" />
     <Content Include="md5.aspx" />
+    <Content Include="SQLDev.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebDev.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aftermath.aspx.cs">
+      <DependentUpon>Aftermath.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aftermath.aspx.designer.cs">
+      <DependentUpon>Aftermath.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ITExam.aspx.cs">
       <DependentUpon>ITExam.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -94,6 +107,13 @@
       <DependentUpon>md5.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLDev.aspx.cs">
+      <DependentUpon>SQLDev.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SQLDev.aspx.designer.cs">
+      <DependentUpon>SQLDev.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebDev.aspx.cs">
       <DependentUpon>WebDev.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

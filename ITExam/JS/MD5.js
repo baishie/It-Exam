@@ -3,11 +3,12 @@ var RawScore;
 var Flag = false;
 var timeUber;
 var Percentile;
+
 var self;
-var Quiz = function () {
+var Exam = function () {
     self = this;
     this.init = function () {
-        self._bindEvents();
+        self.bindEvents();
     }
     //replace answer with correct answer key
     this.correctAnswers = [
@@ -80,30 +81,29 @@ var Quiz = function () {
 
     ]
 
-    this._pickAnswer = function ($answer, $answers) {
-        $answers.find('.quiz-answer').removeClass('active');
+    this.pickAnswer = function ($answer, $answers) {
+        $answers.find('.exam-answer').removeClass('active');
         $answer.addClass('active');
     }
-    this._calcResult = function () {
+    this.calcResult = function () {
         var numberOfCorrectAnswers = 0;
-        $('ul[data-quiz-question]').each(function (i) {
+        $('ul[data-exam-question]').each(function (i) {
             var $this = $(this),
-                chosenAnswer = $this.find('.quiz-answer').val(),
+                chosenAnswer = $this.find('.exam-answer').val(),
                 //chosenAnswer = $this.find('.quiz-answer.active').data('quiz-answer'),
                 correctAnswer;
             //console.log(chosenAnswer + " CHOSEN");
 
             for (var j = 0; j < self.correctAnswers.length; j++) {
                 var a = self.correctAnswers[j];
-                if (a.question == $this.data('quiz-question')) {
-                    //console.log(correctAnswer + " CORRECT ANSW")
+                if (a.question == $this.data('exam-question')) {
                     correctAnswer = a.answer;
                 }
             }
 
             if (chosenAnswer.toLowerCase() == correctAnswer) {
                 numberOfCorrectAnswers++;
-                //$this.find('.quiz-answer.active').addClass('correct');
+                //$this.find('.exam-answer.active').addClass('correct');
             }
         });
         RawScore = numberOfCorrectAnswers;
@@ -219,57 +219,55 @@ var Quiz = function () {
         }
         else if (numberOfCorrectAnswers >= 53) {
             Results = 'Superior';
-            Percentile = '99';
+            Percentile = '100';
         }
     }
-    this._isComplete = function () {
+    this.isComplete = function () {
         Flag = false;
         var answersComplete = 0;
 
         timeUber = sessionStorage.getItem('over');
         console.log(timeUber + " HOY");
         //if (timeUber === "true") {
-        //    self._calcResult();
-        //    $('.quiz-answer').off('click');
+        //    self.calcResult();
+        //    $('.exam-answer').off('click');
         //    document.getElementById('ranking').value = Results;
         //    document.getElementById('rawScore').value = RawScore;
         //    Flag = true;
         //    return true;
         //    //document.getElementById('form1').submit();
         //}
-        $(document).on('click', 'input', function () {
-            self._calcResult();
-            $('.quiz-answer').off('click');
-            document.getElementById('ranking').value = Results;
-            document.getElementById('rawScore').value = RawScore;
-            Flag = true;
-            return true;
+        //$(document).on('click', 'input', function () {
+        //    self.calcResult();
+        //    //$('.exam-answer').off('click');
+        //    localStorage.setItem('ranking', Results);
+        //    localStorage.setItem('rawscore', RawScore);
+        //    redirect();
+        //    //Flag = true;
 
-        });
-        return false;
-        //if (Flag == false) {
-        //    $('ul[data-quiz-question]').each(function () {
-        //        if ($(this).find('.quiz-answer.active').length) {
-        //            answersComplete++;
-        //            //console.log(answersComplete);
-        //        }
-        //    });
-        //    //console.log(localStorage.getItem('over'));
-        //    //console.log("FALSE");
-        //    return false;
-        //}
+        //    //return true;
+
+        //});
+        if (Flag == false) {
+            $('ul[data-exam-question]').each(function () {
+                if ($(this).find('.exam-answer.active').length) {
+                    answersComplete++;
+                    //console.log(answersComplete);
+                }
+            });
+            //console.log(localStorage.getItem('over'));
+            //console.log("FALSE");
+            return false;
+        }
 
     }
-    this._showResult = function (result) {
-        $('.quiz-result').addClass(result.code).html(result.text);
-    }
-    this._bindEvents = function () {
-        $('.quiz-answer').on('click', function () {
+    this.bindEvents = function () {
+        $('.exam-answer').on('click', function () {
             var $this = $(this),
-                $answers = $this.closest('ul[data-quiz-question]');
-            self._pickAnswer($this, $answers);
+                $answers = $this.closest('ul[data-exam-question]');
+            self.pickAnswer($this, $answers);
 
-            if (self._isComplete()) {
+            if (self.isComplete()) {
                 //if (timeUber === 'true') {
                 //    autoSubmit();
                 //}
@@ -278,53 +276,59 @@ var Quiz = function () {
     }
 }
 
-var clicked = sessionStorage.getItem('clicked');
-//console.log(clicked + "CLICKED NI");
-if (clicked === 'true') {
-    //$('.quiz-answer').off('click');
-    $(".quiz-answer").prop('disabled', true);
-    document.getElementById("submit").disabled = true;
-    stopTimer();
-}
-else {
-    var quiz = new Quiz();
-    clearHere();
-    quiz.init();
-}
+//var clicked = sessionStorage.getItem('clicked');
+////console.log(clicked + "CLICKED NI");
+//if (clicked === 'true') {
+//    window.location.replace("Aftermath.aspx");
+//    //$('.exam-answer').off('click');
+//    //document.getElementById("submit").disabled = true;
+//    //stopTimer();
+//}
+//else {
+//    var exam = new Exam();
+//    clearHere();
+//    exam.init();
+//}
+var exam = new Exam();
+clearHere();
+exam.init();
 
 function ifTimeOver() {
     timeUber = sessionStorage.getItem('over');
     console.log("sud dire");
     if (timeUber === "true") {
-        self._calcResult();
-        //console.log("HEREEEEEE");
-        //$('.quiz-answer').off('click');
-        //$(".quiz-answer").prop('disabled', true);
-        document.getElementById(".quiz-answer").disabled = true;
+        self.calcResult();
+        console.log("HEREEEEEE");
+        //document.getElementById(".exam-answer").disabled = true;
+        $('.exam-answer').off('click');
+        localStorage.setItem('ranking', Results);
+        localStorage.setItem('rawscore', RawScore);
         document.getElementById("submit").disabled = true;
-        document.getElementById('ranking').value = Results;
-        document.getElementById('rawScore').value = RawScore;
+        //document.getElementById('ranking').value = Results;
+        //document.getElementById('rawScore').value = RawScore;
         Flag = true;
         autoSubmit();
         //document.getElementById('form1').submit();
     }
 }
 
-function checkForm(form) {
-    if (Flag === true) {
-        clearCountdown();
-        sessionStorage.setItem('clicked', 'true');
-        alert("RAW SCORE: " + RawScore + " RANKING: " + Results);
-    }
-
+function redirect() {
+    //$('.exam-answer').off('click');
+    console.log("TARA KO");
+    sessionStorage.setItem('over', "true");
+    ifTimeOver();
 }
 
 function autoSubmit() {
     if (Flag === true) {
-        clearCountdown();
-        clearHere();
+        //clearCountdown();
         //console.log("abot here");
-        alert("RAW SCORE: " + RawScore + " RANKING: " + Results);
+        //alert("RAW SCORE: " + RawScore + " RANKING: " + Results);
+        //document.getElementById("rank").innerHTML = x;
+        console.log(localStorage.getItem('ranking'));
+        alert("Thank you for taking the exam");
+        window.location.href = "Aftermath.aspx";
+
     }
 
 }

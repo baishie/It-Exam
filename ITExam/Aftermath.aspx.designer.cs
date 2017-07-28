@@ -10,7 +10,7 @@
 namespace ITExam {
     
     
-    public partial class md5 {
+    public partial class Aftermath {
         
         /// <summary>
         /// form1 control.
@@ -22,12 +22,21 @@ namespace ITExam {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// submit control.
+        /// ranking control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button submit;
+        protected global::System.Web.UI.WebControls.HiddenField ranking;
+        
+        /// <summary>
+        /// rawScore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField rawScore;
     }
 }
