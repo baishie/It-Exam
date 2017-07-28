@@ -3,7 +3,6 @@ var RawScore;
 var Flag = false;
 var timeUber;
 var Percentile;
-
 var self;
 var Exam = function () {
     self = this;
@@ -298,11 +297,12 @@ function ifTimeOver() {
     console.log("sud dire");
     if (timeUber === "true") {
         self.calcResult();
-        console.log("HEREEEEEE");
+        //console.log("HEREEEEEE");
         //document.getElementById(".exam-answer").disabled = true;
         $('.exam-answer').off('click');
         localStorage.setItem('ranking', Results);
         localStorage.setItem('rawscore', RawScore);
+        localStorage.setItem('percentile', Percentile);
         document.getElementById("submit").disabled = true;
         //document.getElementById('ranking').value = Results;
         //document.getElementById('rawScore').value = RawScore;
@@ -314,7 +314,7 @@ function ifTimeOver() {
 
 function redirect() {
     //$('.exam-answer').off('click');
-    console.log("TARA KO");
+    //console.log("TARA KO");
     sessionStorage.setItem('over', "true");
     ifTimeOver();
 }
